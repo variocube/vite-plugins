@@ -1,0 +1,29 @@
+{
+  "name": "@variocube/vite-plugins",
+  "version": "1.0.0-alpha.0",
+  "description": "Vite plugins for Variocube applications",
+  "main": "index.ts",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/variocube/vite-plugins.git"
+  },
+  "author": "Variocube GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/variocube/vite-plugins/issues"
+  },
+  "homepage": "https://github.com/variocube/vite-plugins#readme",
+  "peerDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^7.0.0",
+    "@types/node": "^20.0.0 || ^22.0.0 || ^24.0.0"
+  },
+  "files": [
+    "index.ts",
+    "splash/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,65 @@
+#splash {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	color: #282b33;
+	background: #fffaf7;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 99999;
+}
+
+#splash.fadeout {
+	transition: all 0.5s;
+	animation: none;
+	opacity: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+	#splash {
+		background: #15161a;
+		color: #fdfaf7;
+	}
+}
+
+#splash-icon {
+	width: 160px;
+	opacity: 0.5;
+	animation: 1s infinite alternate-reverse pulse-icon ease-in-out;
+}
+
+@keyframes pulse-icon {
+	0% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+
+.splash-error {
+	padding: 16px;
+	margin: 32px auto;
+	max-width: 640px;
+	background: #ffdddd;
+	color: #660000;
+	font-family: sans-serif;
+}
+
+#react-root {
+	width: 100%;
+	height: 100%;
+}
+
+noscript {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100000;
+}
