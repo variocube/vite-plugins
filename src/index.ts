@@ -9,8 +9,8 @@ export function splash(): Plugin {
             order: "pre",
 
             async handler(html: string) {
-                const styles = fs.readFileSync(path.resolve(import.meta.dirname, "splash", "splash.css"), "utf-8");
-                const splash = fs.readFileSync(path.resolve(import.meta.dirname, "splash", "splash.html"), "utf-8");
+                const styles = fs.readFileSync(path.resolve(import.meta.dirname, "..", "splash", "splash.css"), "utf-8");
+                const splash = fs.readFileSync(path.resolve(import.meta.dirname, "..", "splash", "splash.html"), "utf-8");
 
                 return html
                     // Add styles to the end of the head
