@@ -29,7 +29,7 @@ export function nodeNative(modules: string[]): Plugin {
                 this.info(`Using module dir ${moduleDir}`);
 
                 const nodeGypBuild = await import("node-gyp-build");
-                const bindings = nodeGypBuild.resolve(moduleDir);
+                const bindings = nodeGypBuild.default.resolve(moduleDir);
                 this.info(`Using bindings ${bindings}`);
 
                 return createCode(bindings);
