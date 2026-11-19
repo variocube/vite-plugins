@@ -26,6 +26,16 @@
 	}
 }
 
+:root[data-color-scheme="light"] #splash {
+	color: #282b33;
+	background: #fffaf7;
+}
+
+:root[data-color-scheme="dark"] #splash {
+	background: #15161a;
+	color: #fdfaf7;
+}
+
 #splash-icon {
 	width: 160px;
 	opacity: 0.5;
