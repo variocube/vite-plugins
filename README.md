@@ -14,15 +14,21 @@ effect. The plugin only honours the attribute, the app sets it. Do so in an inli
 ```html
 <script>
 	try {
-		const scheme = localStorage.getItem("my-app.colorScheme");
+		const scheme = JSON.parse(localStorage.getItem("variocube-palette-mode"));
 		if (scheme === "light" || scheme === "dark") {
 			document.documentElement.setAttribute("data-color-scheme", scheme);
 		}
 	} catch (e) {
-		// storage unavailable: the system preference applies
+		// storage unavailable or value malformed: the system preference applies
 	}
 </script>
 ```
+
+`@variocube/app-ui` keeps the user's chosen mode in `localStorage` under `variocube-palette-mode`, JSON-encoded
+(`"dark"` with the quotes), hence the `JSON.parse`; an app that stores a plain string drops it. `null` or a missing key
+means no choice, so the splash follows the system preference. That matches the app only when its automatic mode is the
+system preference. An app with `ignoreSystemMode` or a single-mode branding should also set the attribute to its default
+or only mode when nothing usable is stored, and override a stored mode its branding does not offer.
 
 ## rewrite
 
