@@ -1,4 +1,4 @@
-import {Plugin} from 'vite'
+import {Plugin, Rollup} from 'vite'
 import MagicString from 'magic-string'
 
 export function nodeShims(): Plugin {
@@ -29,7 +29,8 @@ const self = globalThis
 `)
             return {
                 code: s.toString(),
-                map: s.generateMap(),
+                // magic-string >= 1 types sourcesContent as (string | null)[], which Rollup's typings do not accept
+                map: s.generateMap() as Rollup.ExistingRawSourceMap,
             }
         },
         apply: 'build',

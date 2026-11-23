@@ -21,7 +21,7 @@
     "@types/node": "^20.0.0 || ^22.0.0 || ^24.0.0"
   },
   "dependencies": {
-    "magic-string": "^0.25.7"
+    "magic-string": "^1.4.5"
   },
   "optionalDependencies": {
     "node-gyp-build": "^4.0.0"
